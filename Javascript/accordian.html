@@ -1,0 +1,50 @@
+<html>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script>
+$(function(){
+    $('.accordion p').hide();
+    
+    $('.accordion input[type="radio"]').click(function() {
+       $('.accordion p').hide();   
+        
+        $('.accordion input[type="radio"]').removeAttr("checked");
+        
+        $(this).prop("checked", true);
+        
+        if($(this).is(":checked")){
+           $("p").eq($(this).val()).show();   
+        }
+        
+        return false;
+    });
+});
+</script>
+
+<body>
+<form>
+    <div class="accordion">   
+        <ul style="list-style-type: none;">
+		<li><input type="radio" name="recog" id="recog_yes" value="0" />
+        <label for="recog">Yes</label></li>
+		<p>  
+            show this for yes
+        </p>
+        
+		<li><input type="radio" name="recog1" id="recog_no" value="1" />
+        <label for="recog">No</label> </li>                       
+        <p>  
+            show this for no
+        </p>
+		</ul>		
+    </div>
+	
+	<div>
+	Test
+	</div>
+
+</form>
+</body>
+
+</html>
